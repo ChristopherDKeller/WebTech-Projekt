@@ -11,10 +11,10 @@ public class StudentController {
         @Autowired
         StudentService service;
         Logger logger = LoggerFactory.getLogger(StudentController.class);
-        
+
         @PostMapping("/students")
         public Student createStudent(@RequestBody Student student) {
-            return service.save(new Student());
+            return service.save(student);
         }
 
         @GetMapping("/students/{id}")
