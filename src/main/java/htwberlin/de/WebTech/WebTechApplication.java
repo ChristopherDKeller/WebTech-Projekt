@@ -18,6 +18,8 @@ public class WebTechApplication {
 		public String helloWorld(){
 			return "Hello World";
 		}
+
+
 	}
 
 }
