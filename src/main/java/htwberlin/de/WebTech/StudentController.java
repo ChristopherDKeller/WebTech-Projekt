@@ -28,6 +28,16 @@ public class StudentController {
         public List<Student> getAllStudents() {
             return service.getAll();
         }
-
+    @GetMapping("/students/mat/{id}")
+    public int getStudentMat(@PathVariable String id) {
+        logger.info("GET request on route things with {}", id);
+        Long studentId = Long.parseLong(id);
+        return  service.get(studentId).getMatrikelnr();
+    }
+    @GetMapping("/delete/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        logger.info("GET request on route things with {}", id);
+             service.delete(id);
+    }
     }
 

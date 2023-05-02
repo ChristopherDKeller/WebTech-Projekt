@@ -26,4 +26,9 @@ public class StudentService {
         for (Student student : iterator)  students.add(student);
         return students;
     }
+    public void delete(Long id) {
+
+        repo.deleteById(id);
+    }
+
 }
