@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class StudentGrade {
     @EmbeddedId
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     StudentGradeKey id;
 
     @ManyToOne
