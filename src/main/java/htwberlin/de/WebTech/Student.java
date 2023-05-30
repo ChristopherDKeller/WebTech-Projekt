@@ -13,16 +13,10 @@ public class Student {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @ManyToMany
-        @JoinTable(
-                name = "student_course",
-                joinColumns = @JoinColumn(name = "student_id"),
-                inverseJoinColumns = @JoinColumn(name = "course_id"))
-        Set<Course> isInCourse;
+        @OneToMany(mappedBy = "student")
+        Set<Course> grades;
         private String name;
         private int matrikelnr;
-
-        public Student() {}
 
         public Student(String name, int matrikelnr) {
             this.name = name;

@@ -10,43 +10,43 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long courseID;
+    private Long id;
 
-    @ManyToMany(mappedBy = "isInCourse")
-    Set<Student> hasStudent;
-   private String courseName;
+    @OneToMany(mappedBy = "student")
+    Set<Student> grades;
+   private String name;
 
 
-    public Course(Long courseID, String courseName) {
-        this.courseID = courseID;
-        this.courseName = courseName;
+    public Course(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Course() {
 
     }
 
-    public Long getCourseID() {
-        return courseID;
+    public Long getId() {
+        return id;
     }
 
-    public void setCourseID(Long courseID) {
-        this.courseID = courseID;
+    public void setId(Long courseID) {
+        this.id = id;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getName() {
+        return name;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Course{" +
-                "courseID=" + courseID +
-                ", courseName='" + courseName + '\'' +
+                "courseID=" + id +
+                ", courseName='" + name + '\'' +
                 '}';
     }
 }
