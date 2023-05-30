@@ -14,7 +14,7 @@ public class Student {
         private Long id;
 
         @OneToMany(mappedBy = "student")
-        Set<Course> grades;
+        Set<StudentGrade> grades;
         private String name;
         private int matrikelnr;
 
@@ -23,7 +23,11 @@ public class Student {
             this.matrikelnr = matrikelnr;
         }
 
-        public Long getId() {
+    public Student() {
+
+    }
+
+    public Long getId() {
             return id;
         }
 

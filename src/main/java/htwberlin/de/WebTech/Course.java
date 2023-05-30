@@ -12,8 +12,8 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "student")
-    Set<Student> grades;
+    @OneToMany(mappedBy = "course")
+    Set<StudentGrade> grades;
    private String name;
 
 
