@@ -16,6 +16,16 @@ public class StudentGradeKey implements Serializable {
 
     // standard constructors, getters, and setters
 
+
+    public StudentGradeKey(Long studentId, Long courseId) {
+        this.studentId = studentId;
+        this.courseId = courseId;
+    }
+
+    public StudentGradeKey(Long courseId) {
+        this.courseId = courseId;
+    }
+
     public Long getStudentId() {
         return studentId;
     }

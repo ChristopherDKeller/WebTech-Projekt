@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 public class StudentGradeController {
     @Autowired
-
     StudentGradeService service;
     Logger logger = LoggerFactory.getLogger(StudentController.class);
 

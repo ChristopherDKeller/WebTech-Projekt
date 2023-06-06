@@ -17,13 +17,18 @@ public class Course {
    private String name;
 
 
-    public Course(Long id, String name) {
-        this.id = id;
+    public Course( String name) {
+
         this.name = name;
     }
 
     public Course() {
 
+    }
+
+    public Course(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Long getId() {

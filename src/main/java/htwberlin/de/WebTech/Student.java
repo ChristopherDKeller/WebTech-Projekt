@@ -27,6 +27,10 @@ public class Student {
 
     }
 
+    public Student(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
             return id;
         }
