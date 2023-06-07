@@ -12,7 +12,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course_id")
     Set<StudentGrade> grades;
    private String name;
 
@@ -20,6 +20,10 @@ public class Course {
     public Course( String name) {
 
         this.name = name;
+    }
+
+    public Course(Long id) {
+        this.id = id;
     }
 
     public Course() {

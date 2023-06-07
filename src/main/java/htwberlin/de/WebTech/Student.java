@@ -13,15 +13,19 @@ public class Student {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @OneToMany(mappedBy = "student")
+        @OneToMany(mappedBy = "student_id")
         Set<StudentGrade> grades;
         private String name;
-        private int matrikelnr;
+        private Integer matrikelnr;
 
-        public Student(String name, int matrikelnr) {
+        public Student(String name, Integer matrikelnr) {
             this.name = name;
             this.matrikelnr = matrikelnr;
         }
+
+    public Student(Long id) {
+        this.id = id;
+    }
 
     public Student() {
 

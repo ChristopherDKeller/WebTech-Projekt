@@ -9,50 +9,48 @@ import java.util.Objects;
 @Embeddable
 public class StudentGradeKey implements Serializable {
     @Column(name = "student_id")
-    Long studentId;
+    Long student_id;
 
     @Column(name = "course_id")
-    Long courseId;
+    Long course_id;
+
 
     // standard constructors, getters, and setters
 
-
-    public StudentGradeKey(Long studentId, Long courseId) {
-        this.studentId = studentId;
-        this.courseId = courseId;
+    public StudentGradeKey(Long student_id, Long course_id) {
+        this.student_id = student_id;
+        this.course_id = course_id;
     }
 
-    public StudentGradeKey(Long courseId) {
-        this.courseId = courseId;
+    public StudentGradeKey() {
     }
 
-    public Long getStudentId() {
-        return studentId;
+    public Long getStudent_id() {
+        return student_id;
     }
 
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+    public void setStudent_id(Long student_id) {
+        this.student_id = student_id;
     }
 
-    public Long getCourseId() {
-        return courseId;
+    public Long getCourse_id() {
+        return course_id;
     }
 
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
+    public void setCourse_id(Long course_id) {
+        this.course_id = course_id;
     }
-    // hashcode and equals implementation
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StudentGradeKey that = (StudentGradeKey) o;
-        return Objects.equals(getStudentId(), that.getStudentId()) && Objects.equals(getCourseId(), that.getCourseId());
+        return Objects.equals(student_id, that.student_id) && Objects.equals(course_id, that.course_id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getStudentId(), getCourseId());
+        return Objects.hash(student_id, course_id);
     }
 }

@@ -6,17 +6,17 @@ import jakarta.persistence.*;
 public class StudentGrade {
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    StudentGradeKey id;
+    StudentGradeKey id = new StudentGradeKey();
 
     @ManyToOne
-    @MapsId("studentId")
+    @MapsId("student_id")
     @JoinColumn(name = "student_id")
-    Student student;
+    Student student_id;
 
     @ManyToOne
-    @MapsId("courseId")
+    @MapsId("course_id")
     @JoinColumn(name = "course_id")
-    Course course;
+    Course course_id;
 
     int grade;
 
@@ -30,20 +30,20 @@ public class StudentGrade {
         this.id = id;
     }
 
-    public Student getStudent() {
-        return student;
+    public Student getStudent_id() {
+        return student_id;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setStudent_id(Student student_id) {
+        this.student_id = student_id;
     }
 
-    public Course getCourse() {
-        return course;
+    public Course getCourse_id() {
+        return course_id;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setCourse_id(Course course_id) {
+        this.course_id = course_id;
     }
 
     public int getGrade() {
