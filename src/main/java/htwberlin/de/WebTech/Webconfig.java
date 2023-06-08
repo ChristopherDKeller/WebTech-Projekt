@@ -1,4 +1,4 @@
-package com.example.WebTech.Projekt;
+package htwberlin.de.WebTech;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
