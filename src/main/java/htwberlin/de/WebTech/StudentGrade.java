@@ -20,6 +20,16 @@ public class StudentGrade {
 
     double grade;
 
+    public StudentGrade(Student student_id, Course course_id, double grade) {
+        this.student_id = student_id;
+        this.course_id = course_id;
+        this.grade = grade;
+    }
+
+    public StudentGrade() {
+
+    }
+
     // getters, and setters
 
     public StudentGradeKey getId() {
