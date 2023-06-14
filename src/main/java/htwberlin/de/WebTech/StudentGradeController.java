@@ -13,7 +13,7 @@ public class StudentGradeController {
     StudentGradeService service;
     Logger logger = LoggerFactory.getLogger(StudentController.class);
 
-    @PostMapping("/grade")
+    @PostMapping("/grades")
     public StudentGrade createStudentGrade(@RequestBody StudentGrade studentGrade) {
         return service.save(studentGrade);
     }

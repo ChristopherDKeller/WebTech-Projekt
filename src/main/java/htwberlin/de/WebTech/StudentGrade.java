@@ -18,7 +18,7 @@ public class StudentGrade {
     @JoinColumn(name = "course_id")
     Course course_id;
 
-    int grade;
+    double grade;
 
     // getters, and setters
 
@@ -46,11 +46,11 @@ public class StudentGrade {
         this.course_id = course_id;
     }
 
-    public int getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(double grade) {
         this.grade = grade;
     }
 }
