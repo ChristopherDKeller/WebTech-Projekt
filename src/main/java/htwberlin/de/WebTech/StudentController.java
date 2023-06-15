@@ -19,7 +19,7 @@ public class StudentController {
 
         @GetMapping("/students/{id}")
         public Student getStudent(@PathVariable String id) {
-            logger.info("GET request on route things with {}", id);
+            logger.info("GET request on route student with {}", id);
             Long studentId = Long.parseLong(id);
             return service.get(studentId);
         }
@@ -30,13 +30,13 @@ public class StudentController {
         }
     @GetMapping("/students/mat/{id}")
     public int getStudentMat(@PathVariable String id) {
-        logger.info("GET request on route things with {}", id);
+        logger.info("GET request on route student with {}", id);
         Long studentId = Long.parseLong(id);
         return  service.get(studentId).getMatrikelnr();
     }
     @GetMapping("/delete/{id}")
     public void deleteStudent(@PathVariable Long id) {
-        logger.info("GET request on route things with {}", id);
+        logger.info("GET request on route student with {}", id);
              service.delete(id);
     }
     }

@@ -24,7 +24,7 @@ public class StudentControllerTest {
 
 
     @Test
-    public void testGetRoute() throws Exception{
+    public void getStudentTest() throws Exception{
 
         Student st1 = new Student("Leon", 84444);
         st1.setId(12L);
@@ -32,7 +32,7 @@ public class StudentControllerTest {
 
         String expected = "{\"id\":12,\"name\":\"Leon\",\"matrikelnr\":84444}";
 
-        this.mockMvc.perform(get("/students/42)"))
+        this.mockMvc.perform(get("/students/12"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().string(containsString(expected)));
