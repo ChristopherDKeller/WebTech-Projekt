@@ -14,7 +14,7 @@ public class Course {
 
     @OneToMany(mappedBy = "course_id")
     Set<StudentGrade> grades;
-   private String name;
+    private String name;
 
 
     public Course( String name) {
@@ -39,7 +39,7 @@ public class Course {
         return id;
     }
 
-    public void setId(Long courseID) {
+    public void setId(Long id) {
         this.id = id;
     }
 

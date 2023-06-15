@@ -55,7 +55,7 @@ public class Student {
             return matrikelnr;
         }
 
-        public void setPrice(int price) {
+        public void setMatrikelnr(int matrikelnr) {
             this.matrikelnr = matrikelnr;
         }
 

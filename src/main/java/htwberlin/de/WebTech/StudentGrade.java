@@ -6,19 +6,19 @@ import jakarta.persistence.*;
 public class StudentGrade {
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    StudentGradeKey id = new StudentGradeKey();
+    private StudentGradeKey id = new StudentGradeKey();
 
     @ManyToOne
     @MapsId("student_id")
     @JoinColumn(name = "student_id")
-    Student student_id;
+    private Student student_id;
 
     @ManyToOne
     @MapsId("course_id")
     @JoinColumn(name = "course_id")
-    Course course_id;
+    private Course course_id;
 
-    double grade;
+    private double grade;
 
     public StudentGrade(Student student_id, Course course_id, double grade) {
         this.student_id = student_id;
