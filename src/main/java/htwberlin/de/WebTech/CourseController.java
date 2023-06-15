@@ -17,6 +17,14 @@ public class CourseController {
 
         return service.save(course);
     }
+
+    @GetMapping("/course/{id}")
+    public Course getCourse(@PathVariable String id) {
+        logger.info("GET request on route course with {}", id);
+        Long courseId = Long.parseLong(id);
+        return service.get(courseId);
+    }
+
     @GetMapping("/course")
     public List<Course> getAllCourses() {
 
