@@ -16,7 +16,7 @@ public class StudentGradeService {
         return repo.save(studentGrade);
     }
 
-    public StudentGrade get(Long id) {
+    public StudentGrade get(StudentGradeKey id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
@@ -26,7 +26,8 @@ public class StudentGradeService {
         for (StudentGrade studentGrade : iterator)  studentGrades.add(studentGrade);
         return studentGrades;
     }
-    public void delete(Long id) {
+    public void delete(StudentGradeKey id) {
         repo.deleteById(id);
     }
+
 }

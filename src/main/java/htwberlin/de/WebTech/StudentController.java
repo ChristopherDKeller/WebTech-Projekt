@@ -34,9 +34,9 @@ public class StudentController {
         Long studentId = Long.parseLong(id);
         return  service.get(studentId).getMatrikelnr();
     }
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/students/delete/{id}")
     public void deleteStudent(@PathVariable Long id) {
-        logger.info("GET request on route student with {}", id);
+        logger.info("DELETE request on route students with {}", id);
              service.delete(id);
     }
     }

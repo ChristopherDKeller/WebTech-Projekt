@@ -31,4 +31,9 @@ public class CourseController {
         return service.getAll();
     }
 
+    @DeleteMapping("/course/delete/{id}")
+    public void deleteCourse(@PathVariable Long id) {
+        logger.info("DELETE request on route course with {}", id);
+        service.delete(id);
+    }
 }

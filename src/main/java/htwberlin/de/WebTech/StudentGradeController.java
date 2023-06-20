@@ -24,4 +24,12 @@ public class StudentGradeController {
         return service.getAll();
     }
 
+    @DeleteMapping("/grades/delete/{studentId}/{courseId}")
+    public void deleteGrade(@PathVariable Long studentId, @PathVariable Long courseId) {
+        logger.info("DELETE request on route grades with studentId: {} and courseId: {}", studentId, courseId);
+        StudentGradeKey id = new StudentGradeKey(studentId, courseId);
+        service.delete(id);
+    }
+
+
 }
