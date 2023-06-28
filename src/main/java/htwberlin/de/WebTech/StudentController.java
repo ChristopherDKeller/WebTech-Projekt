@@ -28,10 +28,11 @@ public class StudentController {
         public List<Student> getAllStudents() {
             return service.getAll();
         }
-    @DeleteMapping("/students/delete/{id}")
-    public void deleteStudent(@PathVariable Long id) {
-        logger.info("DELETE request on route students with {}", id);
-             service.delete(id);
-    }
+
+        @DeleteMapping("/students/delete/{id}")
+        public void deleteStudent(@PathVariable Long id) {
+            logger.info("DELETE request on route students with {}", id);
+                 service.delete(id);
+        }
     }
 
