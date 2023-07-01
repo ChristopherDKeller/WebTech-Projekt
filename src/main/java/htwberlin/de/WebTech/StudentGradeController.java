@@ -36,6 +36,7 @@ public class StudentGradeController {
         logger.info("DELETE request on route grades with studentId: {} and courseId: {}", studentId, courseId);
         StudentGradeKey id = new StudentGradeKey(studentId, courseId);
         service.delete(id);
+        logger.info("SUCCESS");
     }
 
 

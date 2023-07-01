@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -47,11 +48,9 @@ public class GradeDeleteTest {
         //check if student suc. deleted
         this.mockMvc.perform(delete("/grades/delete/1/1"))
                 .andExpect(status().isOk());
-        //check if student doesn´t exists anymore
-        this.mockMvc.perform(get("/grades/1/1"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().string(containsString("")));
+
+        StudentGradeKey key = new StudentGradeKey(1L,1L);
+        verify(service).delete(key);
 
     }
 

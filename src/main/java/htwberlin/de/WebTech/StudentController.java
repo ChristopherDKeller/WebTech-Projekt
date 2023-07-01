@@ -33,6 +33,7 @@ public class StudentController {
         public void deleteStudent(@PathVariable Long id) {
             logger.info("DELETE request on route students with {}", id);
                  service.delete(id);
+            logger.info("SUCCESS");
         }
     }
 
